@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Find all possible solutions for a game of Voltorb Flip from Pokemon HeartGold/SoulSilver">
+    <meta name="keywords" content="Voltorb Flip, Voltorb Flip Solver, Voltorb Flip All Possible Solutions">
+    <title>Voltorb Flip - Find All Possible Solutions</title>
+
+    <link rel="canonical" href="https://www.tslobodnick.ca/VoltorbFlip/" />
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.css" />
+    
+    <link rel="stylesheet" href="CSS/myersReset.css">
+    <link rel="stylesheet" href="CSS/index.css">
+
+    <script defer src="JS/algorithm.js"></script>
+    <script defer src="JS/index.js"></script>
+</head>
+<body>
+    <div id="boardWrapper">
+    <!-- Right of display board -->
+    <div id="input_info">
+        <h1>Voltorb Flip</h1>
+        <form action="">
+            <div id="input_top">
+                <div id="display_board">
+                    <div id="row1">
+                        <div id="row1_col1">&nbsp;</div>
+                        <div id="row1_col2">&nbsp;</div>
+                        <div id="row1_col3">&nbsp;</div>
+                        <div id="row1_col4">&nbsp;</div>
+                        <div id="row1_col5">&nbsp;</div>
+                    </div>
+                    <div id="row2">
+                        <div id="row2_col1">&nbsp;</div>
+                        <div id="row2_col2">&nbsp;</div>
+                        <div id="row2_col3">&nbsp;</div>
+                        <div id="row2_col4">&nbsp;</div>
+                        <div id="row2_col5">&nbsp;</div>
+                    </div>
+                    <div id="row3">
+                        <div id="row3_col1">&nbsp;</div>
+                        <div id="row3_col2">&nbsp;</div>
+                        <div id="row3_col3">&nbsp;</div>
+                        <div id="row3_col4">&nbsp;</div>
+                        <div id="row3_col5">&nbsp;</div>
+                    </div>
+                    <div id="row4">
+                        <div id="row4_col1">&nbsp;</div>
+                        <div id="row4_col2">&nbsp;</div>
+                        <div id="row4_col3">&nbsp;</div>
+                        <div id="row4_col4">&nbsp;</div>
+                        <div id="row4_col5">&nbsp;</div>
+                    </div>
+                    <div id="row5">
+                        <div id="row5_col1">&nbsp;</div>
+                        <div id="row5_col2">&nbsp;</div>
+                        <div id="row5_col3">&nbsp;</div>
+                        <div id="row5_col4">&nbsp;</div>
+                        <div id="row5_col5">&nbsp;</div>
+                    </div>
+                </div>
+            <!-- Appears right of input table-->
+            <div id="rowValues">
+                <div id="rowLegend">
+                    <span class="legend">Points</span>
+                    <span class="legend">Voltorbs</span>
+                </div>
+                <div id="row1_values">
+                    <select name="row1_points" class="inputForRows">
+                        <option value="0">0</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4" selected>4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                        <option value="7">7</option>
+                        <option value="8">8</option>
+                        <option value="9">9</option>
+                        <option value="10">10</option>
+                    </select>
+                    <select name="row1_voltorbs" class="inputForRows">
+                        <option value="0">0</option>
+                        <option value="1" selected>1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                    </select>
+                </div>
+                <div id="row2_values">
+                    <select name="row2_points" class="inputForRows">
+                        <option value="0">0</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3" selected>3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                        <option value="7">7</option>
+                        <option value="8">8</option>
+                        <option value="9">9</option>
+                        <option value="10">10</option>
+                    </select>
+                    <select name="row2_voltorbs" class="inputForRows">
+                        <option value="0">0</option>
+                        <option value="1">1</option>
+                        <option value="2" selected>2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                    </select>
+                </div>
+                <div id="row3_values">
+                    <select name="row3_points" class="inputForRows">
+                        <option value="0">0</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6" selected>6</option>
+                        <option value="7">7</option>
+                        <option value="8">8</option>
+                        <option value="9">9</option>
+                        <option value="10">10</option>
+                    </select>
+                    <select name="row3_voltorbs" class="inputForRows">
+                        <option value="0">0</option>
+                        <option value="1" selected>1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                    </select>
+                </div>
+                <div id="row4_values">
+                    <select name="row4_points" class="inputForRows">
+                        <option value="0">0</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                        <option value="7">7</option>
+                        <option value="8" selected>8</option>
+                        <option value="9">9</option>
+                        <option value="10">10</option>
+                    </select>
+                    <select name="row4_voltorbs" class="inputForRows">
+                        <option value="0" selected>0</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                    </select>
+                </div>
+                <div id="row5_values">
+                    <select name="row5_points" class="inputForRows">
+                        <option value="0">0</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4" selected>4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                        <option value="7">7</option>
+                        <option value="8">8</option>
+                        <option value="9">9</option>
+                        <option value="10">10</option>
+                    </select>
+                    <select name="row5_voltorbs" class="inputForRows">
+                        <option value="0">0</option>
+                        <option value="1">1</option>
+                        <option value="2" selected>2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                    </select>
+                </div>
+            </div>
+            </div>
+            <!-- Appears bottom of input table-->
+            <div id="input_bottom">
+            <div id="colValues">
+                <div id="colLegend">
+                    <span class="legend">Points</span>
+                    <span class="legend">Voltorbs</span>
+                </div>
+                <div id="col1_values">
+                    <select name="col1_points" class="inputForCols">
+                        <option value="0">0</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                        <option value="7" selected>7</option>
+                        <option value="8">8</option>
+                        <option value="9">9</option>
+                        <option value="10">10</option>
+                    </select>
+                    <select name="col1_voltorbs" class="inputForCols">
+                        <option value="0" selected>0</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                    </select>
+                </div>
+                <div id="col2_values">
+                    <select name="col2_points" class="inputForCols">
+                        <option value="0">0</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6" selected>6</option>
+                        <option value="7">7</option>
+                        <option value="8">8</option>
+                        <option value="9">9</option>
+                        <option value="10">10</option>
+                    </select>
+                    <select name="col2_voltorbs" class="inputForCols">
+                        <option value="0">0</option>
+                        <option value="1" selected>1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                    </select>
+                </div>
+                <div id="col3_values">
+                    <select name="col3_points" class="inputForCols">
+                        <option value="0">0</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4" selected>4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                        <option value="7">7</option>
+                        <option value="8">8</option>
+                        <option value="9">9</option>
+                        <option value="10">10</option>
+                    </select>
+                    <select name="col3_voltorbs" class="inputForCols">
+                        <option value="0">0</option>
+                        <option value="1">1</option>
+                        <option value="2" selected>2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                    </select>
+                </div>
+                <div id="col4_values">
+                    <select name="col4_points" class="inputForCols">
+                        <option value="0">0</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4" selected>4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                        <option value="7">7</option>
+                        <option value="8">8</option>
+                        <option value="9">9</option>
+                        <option value="10">10</option>
+                    </select>
+                    <select name="col4_voltorbs" class="inputForCols">
+                        <option value="0">0</option>
+                        <option value="1" selected>1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                    </select>
+                </div>
+                <div id="col5_values">
+                    <select name="col5_points" class="inputForCols">
+                        <option value="0">0</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4" selected>4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                        <option value="7">7</option>
+                        <option value="8">8</option>
+                        <option value="9">9</option>
+                        <option value="10">10</option>
+                    </select>
+                    <select name="col5_voltorbs" class="inputForCols">
+                        <option value="0">0</option>
+                        <option value="1">1</option>
+                        <option value="2" selected>2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                    </select>
+                </div>
+            </div>
+            <div id="submitButtonWrapper">
+                <input id="submitBtn" type="submit" value="Solve">
+            </div>
+            </div>
+        </form>
+    </div>
+    </div>
+    <h3 id="solutionsHeader">Solutions</h3>
+    <h6 id="solutionsShowing"></h6>
+    <div id="openFilterWrapper" style="display: none;">
+        <a href="#modal1" rel="modal:open"><button id="openFilters">Filters</button></a>
+    </div>
+    </div>
+    <div id="solutions">
+        
+    </div>
+    <div id="modal1" class="modal">
+        <div id="filterDiv">
+            <div id="sampleTable">
+                <ul id="sampleRow1" class="sampleRow">
+                    <li id="sampleCell1-1" class="sampleCell"></li>
+                    <li id="sampleCell1-2" class="sampleCell"></li>
+                    <li id="sampleCell1-3" class="sampleCell"></li>
+                    <li id="sampleCell1-4" class="sampleCell"></li>
+                    <li id="sampleCell1-5" class="sampleCell"></li>
+                </ul>
+                <ul id="sampleRow2" class="sampleRow">
+                    <li id="sampleCell2-1" class="sampleCell"></li>
+                    <li id="sampleCell2-2" class="sampleCell"></li>
+                    <li id="sampleCell2-3" class="sampleCell"></li>
+                    <li id="sampleCell2-4" class="sampleCell"></li>
+                    <li id="sampleCell2-5" class="sampleCell"></li>
+                </ul>
+                <ul id="sampleRow3" class="sampleRow">
+                    <li id="sampleCell3-1" class="sampleCell"></li>
+                    <li id="sampleCell3-2" class="sampleCell"></li>
+                    <li id="sampleCell3-3" class="sampleCell"></li>
+                    <li id="sampleCell3-4" class="sampleCell"></li>
+                    <li id="sampleCell3-5" class="sampleCell"></li>
+                </ul>
+                <ul id="sampleRow4" class="sampleRow">
+                    <li id="sampleCell4-1" class="sampleCell"></li>
+                    <li id="sampleCell4-2" class="sampleCell"></li>
+                    <li id="sampleCell4-3" class="sampleCell"></li>
+                    <li id="sampleCell4-4" class="sampleCell"></li>
+                    <li id="sampleCell4-5" class="sampleCell"></li>
+                </ul>
+                <ul id="sampleRow5" class="sampleRow">
+                    <li id="sampleCell5-1" class="sampleCell"></li>
+                    <li id="sampleCell5-2" class="sampleCell"></li>
+                    <li id="sampleCell5-3" class="sampleCell"></li>
+                    <li id="sampleCell5-4" class="sampleCell"></li>
+                    <li id="sampleCell5-5" class="sampleCell"></li>
+                </ul>
+            </div>
+            <div id="optionsWrapper">
+                <ul id="options" class="blur">
+                    <li class="filterOption"><img src="Images/voltorb.png" alt="Voltorb"></li>
+                    <li class="filterOption">1</li>
+                    <li class="filterOption">2</li>
+                    <li class="filterOption">3</li>
+                    <li class="filterOption">Unset</li>
+                </ul>
+            </div>
+            <div id="applyFilterWrapper">
+                <button id="resetFilter">Reset</button>
+                <a href="#" rel="modal:close"><button id="applyFilter">Apply</button></a>
+            </div>
+    </div>
+</body>
+</html>

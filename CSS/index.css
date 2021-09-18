@@ -1,0 +1,344 @@
+select{
+    cursor: pointer;
+}
+
+h1{
+    text-align: center;
+    font-size: 3em;
+    padding-top: 2%;
+    padding-bottom: 5%;
+}
+
+h3{
+    text-align: center;
+    font-size: 2.5em;
+    padding-top: 1%;
+}
+
+h6{
+    text-align: center;
+    font-size: 1.3em;
+    padding-top: 1%;
+    padding-bottom: 2%;
+}
+
+h3, #filters, #solutions, body{
+    background-color: rgb(255, 255, 197);
+}
+
+#boardWrapper{
+    background-color: rgb(255, 255, 197);
+    display: flex;
+    justify-content: center;
+    padding-top: 5%;
+    padding-bottom: 5%;
+}
+
+#display_board{
+    margin-top: 3%;
+    width: 50%;
+}
+
+#input_info{
+    width: 75%;
+    background-color: rgb(253, 253, 181);
+    border: solid thin rgb(255, 0, 43);
+    padding-bottom: 5%;
+}
+
+/*DISPLAY*/
+#row1, #row2, #row3, #row4, #row5{
+    display: flex;
+    justify-content: center;
+}
+
+#row1 div, #row2 div, #row3 div, #row4 div, #row5 div{
+    box-sizing: border-box;
+    min-width: 15%;
+    min-height: 2.5em;
+    border: solid thin black;
+}
+
+/*INPUT*/
+form{
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+}
+
+#input_top{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+#rowValues{
+    width: 25%;
+    display: flex;
+    flex-direction: column;
+}
+#rowValues div{
+    flex: 1;
+    text-align: center;
+    width: 100%;
+    display: flex;
+    margin-bottom: 1%;
+}
+div#rowLegend{
+    flex: none;
+}
+#rowValues div span{
+    width: 50%;
+    margin-bottom: 2%;
+    margin-top: 1%;
+}
+#rowValues div select{
+    flex: 1;
+}
+
+#input_bottom{
+    margin-top: 3%;
+    display: flex;
+    justify-content: center;
+    min-height: 10vh;
+}
+
+#colValues{
+    width: 50%;
+    display: flex;
+    justify-content: flex-end;
+}
+
+#colValues div{
+    min-width: 15%;
+    display: flex;
+    flex-direction: column;
+    margin-right: 1%;
+    justify-content: space-evenly;
+}
+
+#colValues div select{
+    min-height: 5vh;
+}
+
+#input_table{
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+}
+
+#input_table div{
+    display: flex;
+}
+
+.inputForBoard{
+    flex: 1;
+}
+
+#submitButtonWrapper{
+    width: 35%;
+    display: flex;
+    justify-content: center;
+}
+
+input[type='submit']{
+    min-width: 50%;
+    cursor: pointer;
+}
+
+#solutions{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.solution{
+    width: 25%;
+    display: flex;
+    margin-bottom: 2%;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.solution ul, .sampleRow{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.solution ul li{
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: solid thin black;
+    min-height: 32px;
+    min-width: 32px;
+}
+
+.solution ul li img{
+    width: 100%;
+}
+
+#filterDiv{
+    padding-bottom: 3%;
+}
+
+.sampleRow li{
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: solid thin black;
+    min-width: 75px;
+    min-height: 75px;
+    cursor: pointer;
+}
+
+#applyFilterWrapper{
+    text-align: center;
+}
+
+#applyFilter, #resetFilter{
+    margin-top: 2%;
+    min-height: 7vh;
+    min-width: 10vw;
+    text-align: center;
+    cursor: pointer;
+}
+
+#openFilterWrapper{
+    text-align: center;
+}
+
+#openFilters{
+    min-height: 7vh;
+    min-width: 10vw;
+    text-align: center;
+    cursor: pointer;
+    margin-top: 1%;
+    margin-bottom: 3%;
+}
+
+#options{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.filterOption{
+    cursor: default;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-width: 50px;
+    min-height: 50px;
+}
+
+
+/* JS CLASSES */
+.blur{
+    opacity: 0.5;
+}
+
+.selected{
+    background-color: aquamarine;
+}
+
+
+
+
+@media only screen and (max-width: 1000px) {
+    .solution{
+        width: 33%;
+    }
+}
+
+
+@media only screen and (max-width: 768px) {
+    /* For mobile phones: */
+    h1{
+        font-size: 2.3em;
+    }
+
+    h3{
+        font-size: 1.7em;
+    }
+
+    h6{
+        font-size: 1em;
+    }
+
+    #input_info{
+        width: 90%;
+    }
+
+    #row1 div, #row2 div, #row3 div, #row4 div, #row5 div{
+        min-width: 17%;
+    }
+
+    form{
+        width: 100%;
+    }
+
+    #display_board{
+        width: 74%;
+    }
+
+    #colValues{
+        width: unset;
+        flex: 1;
+    }
+
+    #rowValues div select{
+        min-height: 5vh;
+    }
+
+    #submitButtonWrapper{
+        width: 25%;
+    }
+
+    input[type='submit']{
+        min-width: 90%;
+    }
+
+    #openFilters{
+        min-height: 9vh;
+        min-width: 25vw;
+        margin-top: 2%;
+        margin-bottom: 4%;
+    }
+
+    .solution{
+        width: 50%;
+    }
+
+    div#colLegend{
+        min-width: unset !important;
+    }
+
+    #colValues div{
+        min-width: 17%;
+    }
+
+    .sampleRow li{
+        min-width: 40px;
+        min-height: 40px;
+    }
+
+    .filterOption{
+        min-width: 20%;
+        min-height: 10vh;
+    }
+
+    #resetFilter, #applyFilter{
+        min-width: 20vw;
+    }
+  }
+
+  @media only screen and (max-width: 425px) {
+    .solution{
+        width: 100%;
+    }
+}
