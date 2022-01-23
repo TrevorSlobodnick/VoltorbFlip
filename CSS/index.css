@@ -4,7 +4,7 @@ select{
 
 h1{
     text-align: center;
-    font-size: 3em;
+    font-size: 2.7em;
     padding-top: 2%;
     padding-bottom: 5%;
 }
@@ -23,11 +23,12 @@ h6{
 }
 
 h3, #filters, #solutions, body{
-    background-color: rgb(255, 255, 197);
+    font-family: 'Helvetica', 'Verdana', 'Arial', sans-serif;
+    background-color: #309f6a;
 }
 
 #boardWrapper{
-    background-color: rgb(255, 255, 197);
+    background-color: #309f6a;
     display: flex;
     justify-content: center;
     padding-top: 5%;
@@ -41,8 +42,7 @@ h3, #filters, #solutions, body{
 
 #input_info{
     width: 75%;
-    background-color: rgb(253, 253, 181);
-    border: solid thin rgb(255, 0, 43);
+    background-color: #309f6a;
     padding-bottom: 5%;
 }
 
@@ -139,10 +139,10 @@ div#rowLegend{
     width: 35%;
     display: flex;
     justify-content: center;
+    align-items: center;
 }
 
 input[type='submit']{
-    min-width: 50%;
     cursor: pointer;
 }
 
@@ -209,16 +209,17 @@ input[type='submit']{
 
 #openFilterWrapper{
     text-align: center;
+    margin-bottom: 2.5rem;
 }
 
-#openFilters{
+/* #openFilters{
     min-height: 7vh;
     min-width: 10vw;
     text-align: center;
     cursor: pointer;
     margin-top: 1%;
     margin-bottom: 3%;
-}
+} */
 
 #options{
     display: flex;
@@ -235,6 +236,47 @@ input[type='submit']{
     min-width: 50px;
     min-height: 50px;
 }
+
+
+
+/* Bootstrap classes */
+.btn {
+    display: inline-block;
+    font-weight: 400;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    cursor: pointer;
+    border: 1px solid transparent;
+    padding: 0.45rem 1rem;
+    font-size: 1rem;
+    line-height: 1.5;
+    border-radius: 0.25rem;
+    transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+}
+
+.btn-lg {
+    padding: 0.5rem 1rem;
+    font-size: 1.25rem;
+    border-radius: 0.3rem;
+}
+
+.btn-light {
+    color: #000;
+    background-color: #f8f9fa;
+    border-color: #f8f9fa;
+}
+
+.btn-dark {
+    color: #fff;
+    background-color: #212529;
+    border-color: #212529;
+}
+
 
 
 /* JS CLASSES */
@@ -299,16 +341,12 @@ input[type='submit']{
         width: 25%;
     }
 
-    input[type='submit']{
-        min-width: 90%;
-    }
-
-    #openFilters{
+    /* #openFilters{
         min-height: 9vh;
         min-width: 25vw;
         margin-top: 2%;
         margin-bottom: 4%;
-    }
+    } */
 
     .solution{
         width: 50%;
@@ -337,8 +375,12 @@ input[type='submit']{
     }
   }
 
-  @media only screen and (max-width: 425px) {
+  @media (max-width: 425px) {
     .solution{
         width: 100%;
+    }
+
+    .legend{
+        font-size: 0.8rem;
     }
 }
